@@ -1,5 +1,5 @@
-##Going throught the tryhackme rooms and hacktivities
+## Going throught the tryhackme rooms and hacktivities
 
-###Just starting this journey
+### Just starting this journey
 
-###Hoping to learn a great deal
+### Hoping to learn a great deal
