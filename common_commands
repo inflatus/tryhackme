@@ -16,6 +16,12 @@ SQL
 
 
 
+
+SMB
+smbclient //IP/ username -U password -p PORT
+smbclient //IP/ Anonymous -U -p PORT     (use this to see if Anonymous access is allowed / may need to see what directory is available for SMB)
+
+
 Manual
 -uname -a
 
