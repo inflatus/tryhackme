@@ -5,6 +5,7 @@
 
 ### Enumerating smb
 
+```
 enum4linux -A 10.10.227.53
 
 Starting enum4linux v0.8.9 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Tue Oct 13 19:26:18 2020
@@ -369,12 +370,13 @@ No printers returned.
 
 
 enum4linux complete on Tue Oct 13 19:34:33 2020
-
+```
 
 
 
 ### nmap scan
 
+```
 # Nmap 7.91 scan initiated Tue Oct 13 19:28:55 2020 as: nmap -sC -sV -oA nmap/initial 10.10.227.53
 Nmap scan report for 10.10.227.53
 Host is up (0.13s latency).
@@ -413,7 +415,7 @@ Host script results:
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 # Nmap done at Tue Oct 13 19:29:24 2020 -- 1 IP address (1 host up) scanned in 29.12 seconds
-
+```
 
 
 ### IP
