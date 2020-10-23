@@ -1,11 +1,9 @@
-####
+### IP
 
 
 10.10.227.53 IP address
 
-####
-
-enumerating smb
+### Enumerating smb
 
 enum4linux -A 10.10.227.53
 
@@ -375,9 +373,7 @@ enum4linux complete on Tue Oct 13 19:34:33 2020
 
 
 
-####
-
-namp scan
+### nmap scan
 
 # Nmap 7.91 scan initiated Tue Oct 13 19:28:55 2020 as: nmap -sC -sV -oA nmap/initial 10.10.227.53
 Nmap scan report for 10.10.227.53
@@ -420,7 +416,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 
 
 
-####
+### IP
 
 
 IP address 
@@ -441,9 +437,7 @@ cat the smb.tx flag
 THM{smb_is_fun_eh?}
 
 
-####
-
-Telnet
+### Telnet
 
 telnet 10.10.10.3 23
 
