@@ -10,6 +10,7 @@ IP `10.10.137.46`
 nmap scan
 nmap -sC -sV -p- -oN nmap/initial 10.10.137.46
 
+```
 # Nmap 7.80 scan initiated Fri Sep 18 19:40:24 2020 as: nmap -sC -sV -oN nmap/initial 10.10.137.46
 Nmap scan report for 10.10.137.46
 Host is up (0.27s latency).
@@ -39,6 +40,7 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 # Nmap done at Fri Sep 18 19:42:35 2020 -- 1 IP address (1 host up) scanned in 130.54 seconds
+```
 
 ### gobuster scan
 gobuster dir -u 10.10.137.46 -w /usr/share/wordlists/directory-list-2.3-medium.txt -o gobuster_scan.txt
