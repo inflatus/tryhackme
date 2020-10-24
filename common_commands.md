@@ -1,8 +1,10 @@
 ### Initial Scans
 nmap -sC -sV -oA nmap/initial 'IP"
 nmap -p- -oA nmap/allports 'IP'
+nmap -A -p 'open port' 'IP'
+
 gobuster dir -u 'IP or website'  -w /usr/share/wordlists/directory-list-2.3-medium.txt -o gobuster_scan.txt
-enum4linux -A 'IP'
+enum4linux -a 'IP'
 
 
 
