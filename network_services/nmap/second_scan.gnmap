@@ -1,0 +1,4 @@
+# Nmap 7.91 scan initiated Fri Oct 23 19:50:26 2020 as: nmap -Pn -oA nmap/second_scan 10.10.134.91
+Host: 10.10.134.91 ()	Status: Up
+Host: 10.10.134.91 ()	Status: Up
+# Nmap done at Fri Oct 23 19:50:39 2020 -- 1 IP address (1 host up) scanned in 12.71 seconds

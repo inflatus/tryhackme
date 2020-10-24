@@ -443,6 +443,88 @@ THM{smb_is_fun_eh?}
 
 telnet 10.10.10.3 23
 
+enumerating telnet
+
+run nmap
+
+nmap -p- -oA nmap/allports 10.10.134.91
+
+had to run this with ping disabled
+
+nmap -p- -Pn -oA nmap/allports 10.10.134.91
+```
+# Nmap 7.91 scan initiated Fri Oct 23 19:37:39 2020 as: nmap -p- -Pn -oA nmap/allports 10.10.134.91
+Nmap scan report for 10.10.134.91
+Host is up (0.13s latency).
+Not shown: 65534 closed ports
+PORT     STATE SERVICE
+8012/tcp open  unknown
+
+# Nmap done at Fri Oct 23 19:49:16 2020 -- 1 IP address (1 host up) scanned in 696.89 seconds
+```
+
+now without allports
+
+nmap -Pn -oA nmap/second_scan 10.10.134.91
+```
+# Nmap 7.91 scan initiated Fri Oct 23 19:50:26 2020 as: nmap -Pn -oA nmap/second_scan 10.10.134.91
+Nmap scan report for 10.10.134.91
+Host is up (0.13s latency).
+All 1000 scanned ports on 10.10.134.91 are closed
+
+# Nmap done at Fri Oct 23 19:50:39 2020 -- 1 IP address (1 host up) scanned in 12.71 seconds
+```
+
+using non standard ports it could be used for a backdoor
+
+nmap scan for open ports
+
+nmap -A -p 8012 10.10.134.91
+```
+Starting Nmap 7.91 ( https://nmap.org ) at 2020-10-23 20:03 EDT
+Nmap scan report for 10.10.134.91
+Host is up (0.13s latency).
+
+PORT     STATE SERVICE VERSION
+8012/tcp open  unknown
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NCP, NULL, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, X11Probe: 
+|_    SKIDY'S BACKDOOR. Type .HELP to view commands
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port8012-TCP:V=7.91%I=7%D=10/23%Time=5F936F61%P=x86_64-pc-linux-gnu%r(N
+SF:ULL,2E,"SKIDY'S\x20BACKDOOR\.\x20Type\x20\.HELP\x20to\x20view\x20comman
+SF:ds\n")%r(GenericLines,2E,"SKIDY'S\x20BACKDOOR\.\x20Type\x20\.HELP\x20to
+SF:\x20view\x20commands\n")%r(GetRequest,2E,"SKIDY'S\x20BACKDOOR\.\x20Type
+SF:\x20\.HELP\x20to\x20view\x20commands\n")%r(HTTPOptions,2E,"SKIDY'S\x20B
+SF:ACKDOOR\.\x20Type\x20\.HELP\x20to\x20view\x20commands\n")%r(RTSPRequest
+SF:,2E,"SKIDY'S\x20BACKDOOR\.\x20Type\x20\.HELP\x20to\x20view\x20commands\
+SF:n")%r(RPCCheck,2E,"SKIDY'S\x20BACKDOOR\.\x20Type\x20\.HELP\x20to\x20vie
+SF:w\x20commands\n")%r(DNSVersionBindReqTCP,2E,"SKIDY'S\x20BACKDOOR\.\x20T
+SF:ype\x20\.HELP\x20to\x20view\x20commands\n")%r(DNSStatusRequestTCP,2E,"S
+SF:KIDY'S\x20BACKDOOR\.\x20Type\x20\.HELP\x20to\x20view\x20commands\n")%r(
+SF:Help,2E,"SKIDY'S\x20BACKDOOR\.\x20Type\x20\.HELP\x20to\x20view\x20comma
+SF:nds\n")%r(SSLSessionReq,2E,"SKIDY'S\x20BACKDOOR\.\x20Type\x20\.HELP\x20
+SF:to\x20view\x20commands\n")%r(TerminalServerCookie,2E,"SKIDY'S\x20BACKDO
+SF:OR\.\x20Type\x20\.HELP\x20to\x20view\x20commands\n")%r(TLSSessionReq,2E
+SF:,"SKIDY'S\x20BACKDOOR\.\x20Type\x20\.HELP\x20to\x20view\x20commands\n")
+SF:%r(Kerberos,2E,"SKIDY'S\x20BACKDOOR\.\x20Type\x20\.HELP\x20to\x20view\x
+SF:20commands\n")%r(SMBProgNeg,2E,"SKIDY'S\x20BACKDOOR\.\x20Type\x20\.HELP
+SF:\x20to\x20view\x20commands\n")%r(X11Probe,2E,"SKIDY'S\x20BACKDOOR\.\x20
+SF:Type\x20\.HELP\x20to\x20view\x20commands\n")%r(FourOhFourRequest,2E,"SK
+SF:IDY'S\x20BACKDOOR\.\x20Type\x20\.HELP\x20to\x20view\x20commands\n")%r(L
+SF:PDString,2E,"SKIDY'S\x20BACKDOOR\.\x20Type\x20\.HELP\x20to\x20view\x20c
+SF:ommands\n")%r(LDAPSearchReq,2E,"SKIDY'S\x20BACKDOOR\.\x20Type\x20\.HELP
+SF:\x20to\x20view\x20commands\n")%r(LDAPBindReq,2E,"SKIDY'S\x20BACKDOOR\.\
+SF:x20Type\x20\.HELP\x20to\x20view\x20commands\n")%r(SIPOptions,2E,"SKIDY'
+SF:S\x20BACKDOOR\.\x20Type\x20\.HELP\x20to\x20view\x20commands\n")%r(LANDe
+SF:sk-RC,2E,"SKIDY'S\x20BACKDOOR\.\x20Type\x20\.HELP\x20to\x20view\x20comm
+SF:ands\n")%r(TerminalServer,2E,"SKIDY'S\x20BACKDOOR\.\x20Type\x20\.HELP\x
+SF:20to\x20view\x20commands\n")%r(NCP,2E,"SKIDY'S\x20BACKDOOR\.\x20Type\x2
+SF:0\.HELP\x20to\x20view\x20commands\n");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 162.16 seconds
+```
 
 
 

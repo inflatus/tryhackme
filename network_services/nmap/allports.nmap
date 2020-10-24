@@ -1,0 +1,8 @@
+# Nmap 7.91 scan initiated Fri Oct 23 19:37:39 2020 as: nmap -p- -Pn -oA nmap/allports 10.10.134.91
+Nmap scan report for 10.10.134.91
+Host is up (0.13s latency).
+Not shown: 65534 closed ports
+PORT     STATE SERVICE
+8012/tcp open  unknown
+
+# Nmap done at Fri Oct 23 19:49:16 2020 -- 1 IP address (1 host up) scanned in 696.89 seconds
