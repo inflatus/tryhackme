@@ -8,19 +8,19 @@ from spwd import getspnam
 
 def main():
     uid = os.getuid()
-    if (uid()!=0):
+    if (uid != 0):
         print(Fore.YELLOW+"Use root!")
         exit(1)
     
     if (len(argv)<=1):
         print(Fore.YELLOW + "What user's password should we crack?" + Fore.RESET)
-        username=raw_input()
+        username = input()
     else:
-        username=argv[1]
+        username = argv[1]
 
     print(Fore.CYAN + "Cracking your UNIX password for " + Fore.YELLOW + username)
 
-    dict_file = open("passwords.txt")
+    dict_file = open("10-million-password-list-top-1000000.txt")
     encrypted_password=getspnam(username)[1]
 
     print(Fore.CYAN + "Encrypted password is " + Fore.YELLOW + encrypted_password)
@@ -46,13 +46,6 @@ def main():
     exit(1)
     
 
-
-
-
-
-
-
-
-    if (__name__ == "__main__"):
-        main()
+if __name__ == "__main__":
+    main()
 
