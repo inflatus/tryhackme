@@ -6,7 +6,8 @@ nmap -A -p 'open port' 'IP'
 gobuster dir -u 'IP or website'  -w /usr/share/wordlists/directory-list-2.3-medium.txt -o gobuster_scan.txt
 enum4linux -a 'IP'
 
-
+### Hydra
+hydra -t 4 -l 'Username' -P 'wordlist' -vV 'IP' ftp
 
 
 ### SQL
