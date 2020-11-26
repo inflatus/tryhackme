@@ -1,4 +1,4 @@
-# Nmap 7.91 scan initiated Fri Oct 23 19:35:39 2020 as: nmap -sC -sV -oA nmap/initial 10.10.134.91
-Host: 10.10.134.91 ()	Status: Up
-Host: 10.10.134.91 ()	Status: Up
-# Nmap done at Fri Oct 23 19:35:49 2020 -- 1 IP address (1 host up) scanned in 9.57 seconds
+# Nmap 7.91 scan initiated Thu Nov 26 17:55:09 2020 as: nmap -sC -sV -oA nmap/initial 10.10.234.147
+Host: 10.10.234.147 ()	Status: Up
+Host: 10.10.234.147 ()	Ports: 21/open/tcp//ftp//vsftpd 2.0.8 or later/, 80/open/tcp//http//Apache httpd 2.4.29 ((Ubuntu))/	Ignored State: closed (998)
+# Nmap done at Thu Nov 26 17:55:37 2020 -- 1 IP address (1 host up) scanned in 28.23 seconds

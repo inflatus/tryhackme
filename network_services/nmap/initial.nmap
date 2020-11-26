@@ -1,7 +1,28 @@
-# Nmap 7.91 scan initiated Fri Oct 23 19:35:39 2020 as: nmap -sC -sV -oA nmap/initial 10.10.134.91
-Nmap scan report for 10.10.134.91
+# Nmap 7.91 scan initiated Thu Nov 26 17:55:09 2020 as: nmap -sC -sV -oA nmap/initial 10.10.234.147
+Nmap scan report for 10.10.234.147
 Host is up (0.13s latency).
-All 1000 scanned ports on 10.10.134.91 are closed
+Not shown: 998 closed ports
+PORT   STATE SERVICE VERSION
+21/tcp open  ftp     vsftpd 2.0.8 or later
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_-rw-r--r--    1 0        0             353 Apr 24  2020 PUBLIC_NOTICE.txt
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to ::ffff:10.6.11.238
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 2
+|      vsFTPd 3.0.3 - secure, fast, stable
+|_End of status
+80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+|_http-title: Apache2 Ubuntu Default Page: It works
+Service Info: Host: Welcome
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Fri Oct 23 19:35:49 2020 -- 1 IP address (1 host up) scanned in 9.57 seconds
+# Nmap done at Thu Nov 26 17:55:37 2020 -- 1 IP address (1 host up) scanned in 28.23 seconds
