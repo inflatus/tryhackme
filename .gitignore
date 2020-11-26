@@ -7,6 +7,9 @@ test.py
 *.ovpn
 .*
 
+# hydra
+hydra.restore
+
 # gitignore info from GitHub python.gitignore repository
 # Byte-compiled / optimized / DLL files
 __pycache__/
