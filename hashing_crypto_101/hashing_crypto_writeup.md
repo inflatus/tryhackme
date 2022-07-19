@@ -20,7 +20,7 @@ seems this was supposed to be online because it is not in a rainbow table (which
 
 ### Note
 
-should not encrypt passwords 
+should not encrypt passwords
 
 ### Rounds
 
@@ -32,13 +32,13 @@ How many rounds does sha512crypt ($6$) use by default?
 
 asking about Citrix NetScaler example hash
 
-8100 	Citrix NetScaler 	1765058016a22f1b4e076dccd1c3df4e8e5c0839ccded98ea 
+8100  Citrix NetScaler  1765058016a22f1b4e076dccd1c3df4e8e5c0839ccded98ea
 
 ### hash Length
 
 how long is ntlm hash
 
-1000 	NTLM 	b4b9b02e6f09a9bd760f388b67351e2b
+1000  NTLM  b4b9b02e6f09a9bd760f388b67351e2b
 
 32
 
@@ -55,4 +55,3 @@ crack the hash 9eb7ee7f551d2f0ac684981bd1f1e2fa4a37590199636753efe614d4db30e8e1
 sha-256
 
 halloween
-
