@@ -34,3 +34,28 @@ LinEnum.sh
 LinuxPrivChecker.py
 Smnart Linux Enumeration
 LinPEAS
+
+### Favicon
+
+curl 'IP'/favicon.ico | md5sum
+must run with a known favicon
+(search through <https://wiki.owasp.org/index.php/OWASP_favicon_database>)
+
+### http Headers
+
+curl "IP' -v
+
+### ffuf
+
+ffuf -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt -u 'IP'/FUZZ
+fast word fuzzer
+
+### dirb
+
+dirb 'IP' /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt
+dirbuster is used to brute force directories and filenames on web/application servers
+
+### gobuster
+
+gobuster dir --url 'IP' -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt
+gobuster is used to brute force directories, filenames and DNS subdomains
