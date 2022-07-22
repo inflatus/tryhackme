@@ -47,8 +47,9 @@ curl "IP' -v
 
 ### ffuf
 
-ffuf -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt -u 'IP'/FUZZ
+ffuf -w /usr/share/wordlists/seclists/Discovery/DNS/namelist.txt -H "Host: FUZZ.'header to call your shot'" -u 'IP' -fs 2395  
 fast word fuzzer
+setting a file size will not show those results
 
 ### dirb
 
