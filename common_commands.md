@@ -48,8 +48,13 @@ curl "IP' -v
 ### ffuf
 
 ffuf -w /usr/share/wordlists/seclists/Discovery/DNS/namelist.txt -H "Host: FUZZ.'header to call your shot'" -u 'IP' -fs 2395  
-fast word fuzzer
 setting a file size will not show those results
+
+ffuf -w /usr/share/wordlists/SecLists/Usernames/Names/names.txt -X POST -d "username=FUZZ&email=x&password=x&cpassword=x" -H "Content-Type: application/x-www-form-urlencoded" -u 'IP'/customers/signup -mr "username already exists"
+enumerate usernames / assuming customers/signup
+
+ffuf -w valid_usernames.txt:W1,/usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100.txt:W2 -X POST -d "username=W1&password=W2" -H "Content-Type: application/x-www-form-urlencoded" -u 'IP'/customers/login -fc 200
+enumerate passwords / assuming customers/login
 
 ### dirb
 
