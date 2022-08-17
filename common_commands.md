@@ -67,3 +67,7 @@ dirbuster is used to brute force directories and filenames on web/application se
 
 gobuster dir --url 'IP' -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt
 gobuster is used to brute force directories, filenames and DNS subdomains
+
+### rustscan
+rustscan -t 1500 'IP' -- -A -sC
+rustscan -a 1500 'IP' -- -A -sC
