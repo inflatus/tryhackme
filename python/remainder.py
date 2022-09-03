@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# used to find remainder
+'''find the remainder of an input'''
 
 print("What is the dividend?")
 q = input()

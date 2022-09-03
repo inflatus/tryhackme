@@ -1,6 +1,4 @@
-#!/usr/bin/python3
-
-'''decode base 64 file'''
+'''decode encodedflag.txt file'''
 
 import base64
 
